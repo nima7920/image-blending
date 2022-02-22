@@ -3,7 +3,8 @@ import cv2
 import poisson_blend
 import multiresolution_blend
 
-# applying poisson blending
+''' applying poisson blending '''
+# reading images and scaling them to [0,1]
 img1 = cv2.imread("inputs/cards.jpg")
 img2 = cv2.imread("inputs/desk.jpg")
 
@@ -25,7 +26,7 @@ final_result = (img2.copy() * 255).astype('uint8')
 final_result[195:485, 355:715, :] = result
 cv2.imwrite("outputs/cards-on-desk.jpg", final_result)
 
-# applying multiresolution blending
+''' applying multiresolution blending '''
 img1 = cv2.imread("inputs/tree_spring.jpg")
 img2 = cv2.imread("inputs/tree_fall.jpg")
 
